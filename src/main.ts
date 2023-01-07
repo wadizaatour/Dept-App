@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import { createPinia } from "pinia";
 import {worker} from"./mocks/browser"
   const listen = () =>{
     if (process.env.NODE_ENV === 'development') {
@@ -9,4 +10,4 @@ import {worker} from"./mocks/browser"
     }
   }
   listen()
-createApp(App).mount('#app')
+createApp(App).use(createPinia()).mount('#app')
