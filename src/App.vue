@@ -11,9 +11,9 @@ export default {
   async created() {
     try {
       this.elements = await fetchMessage()
-      console.log( this.elements )
+      // console.log(this.elements)
     }
-    catch(error){
+    catch (error) {
       this.elements = 'server error :('
     }
   }
@@ -28,25 +28,9 @@ import ClientNote from './components/ClientNote.vue'
 
 </script>
 <template>
-  <NavBar/>
- <HeroSection/>
- <ClientNote/>
-  <!-- <Main class="flex items-center" msg="Vite + Vue" /> -->
-  
-  
-  <Footer/>
+  <NavBar />
+  <HeroSection />
+  <ClientNote />
+  <Footer />
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+ 
