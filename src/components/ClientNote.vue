@@ -1,14 +1,14 @@
 <template>
-    <div class="flex  items-start p-0 relative max-h-[568px] h-[568px] " :class="cardPosition">
+    <div class="flex  items-start p-0 h-[568px] " :class="cardPosition">
         <Card 
         :key="client?.id" 
         :title="client?.brandName"
         :description="client?.description"  
         :readmore="client?.readmore" 
         :src="client?.src" 
-        class="max-w-[964px]"
+     
         />
-        <div class="bg-[#121212] " style="width:100% ; height: inherit;">
+        <div class="bg-[#121212]">
             <ul class="px-8 py-24">
                 <li class="text-lg font-normal leading-4 text-white border-b-white border-b "
                     :class="removeFirstElement(item)" v-for="item in listItems">

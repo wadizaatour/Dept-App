@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoaded" class="flex flex-row p-0 max-h-[568px] h-[568px]">
+    <div v-if="isLoaded" class="flex flex-col md:flex-row p-0 md:h-[568px]">
         <Card v-for=" items in clients" 
         :key="items?.id" 
         :title="items?.brandName"

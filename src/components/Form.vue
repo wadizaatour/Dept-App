@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row p-20">
+    <div class="flex flex-col md:flex-row  p-20">
         <div id="question" class="m-8">
             <p class="text-4xl leading-[80px]">
                 QUESTION?
@@ -12,11 +12,11 @@
             </p>
         </div>
         <Form id="form" class="m-8" @submit="onSubmit">
-            <div id="contact" class="flex flex-row gap-9">
+            <div id="contact" class="flex flex-col md:flex-row gap-9">
                 <Input labelTitle="Name" name="name" typeInput="text" :validationRules="validateName"/>
                 <Input labelTitle="Email" name="email" typeInput="email" :validationRules="validateEmail" />
             </div>
-            <div id="message" class="flex pt-10">
+            <div id="message" class="flex1 md:flex pt-10">
                 <Input labelTitle="Message" name="message" typeInput="text" :validationRules="validateMessage" />
             </div>
             <div class="pt-20">

@@ -1,10 +1,13 @@
 <template>
-  <nav class="flex  bg-[#121212] px-14" :class="navClasses">
+  <nav class="flex bg-[#121212] px-14" :class="navClasses">
    <div class="flex flex-col top-8 gap-10" :class="logoClass">
      <!-- LOGO -->
       <a href="https://dept.com/" class="flex items-center">
-        <img src="../assets/deptLogo.svg" alt="Dept Logo" />
+        <img  src="../assets/deptLogo.svg" alt="Dept Logo" />
       </a>
+      <!-- <a href="https://dept.com/" class="items-center  flex">
+        <img  src="../assets/logoBlack.svg" alt="Dept Logo" />
+      </a> -->
       <!-- COUNTRIES -->
       <ul  v-if="isOpen" class="flex flex-col w-40 text-base font-normal leading-4  gap-1 bg-[#121212]">
         <li v-for="item in CountriesItem " class=" font-normal text-white text-1xl w-full">
