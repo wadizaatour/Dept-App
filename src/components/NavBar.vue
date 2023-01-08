@@ -1,15 +1,15 @@
 <template>
-  <nav class="flex bg-[#121212] px-14" :class="navClasses">
-   <div class="flex flex-col top-8 gap-10" :class="logoClass">
+  <nav class="flex  md:text-white md:bg-[#121212] px-14 w-full " :class="navClasses">
+   <div class="flex md:flex-col gap-10" :class="logoClass">
      <!-- LOGO -->
-      <a href="https://dept.com/" class="flex items-center">
+      <a  href="https://dept.com/" class="" :class="whiteLogoMobileClass">
         <img  src="../assets/deptLogo.svg" alt="Dept Logo" />
       </a>
-      <!-- <a href="https://dept.com/" class="items-center  flex">
+      <a v-if="!isOpen" href="https://dept.com/" class="items-start flex md:hidden">
         <img  src="../assets/logoBlack.svg" alt="Dept Logo" />
-      </a> -->
+      </a>
       <!-- COUNTRIES -->
-      <ul  v-if="isOpen" class="flex flex-col w-40 text-base font-normal leading-4  gap-1 bg-[#121212]">
+      <ul  v-if="isOpen" class="md:flex flex-col w-40 text-base font-normal leading-4 hidden gap-1 bg-[#121212]">
         <li v-for="item in CountriesItem " class=" font-normal text-white text-1xl w-full">
           <a  href="#" aria-current="page" :key="item">{{ item }}</a>
         </li>
@@ -27,13 +27,14 @@
       </ul>
     </div>
   <!-- MENU + BUTTON #closedNav -->
-    <ul v-if="!isOpen" class="flex flex-row justify-center items-center gap-12 ">
+    <ul v-if="!isOpen" class="md:flex flex-row justify-center items-center gap-12 hidden ">
       <li v-for="item in Menu " class="text-lg font-normal leading-4 hover:underline text-white">
         <a href="#" aria-current="page" :key="item">{{ item }}</a>
       </li>
     </ul>
-    <button v-if="!isOpen" @click="toggleMenu">
-      <component :is="dots" class="fill-current transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
+    <button v-if="!isOpen" @click="toggleMenu" >
+      <p class="block md:hidden">Menu</p>
+      <component :is="dots" class="fill-current transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hidden md:block" />
     </button>
   </nav>
 </template>
@@ -60,10 +61,13 @@ const exitMenu = defineAsyncComponent(() =>
 );
 
 const navClasses = computed(() => {
-  return isOpen.value ? "h-screen items-start p-[46px] transition ease-in-out delay-150  duration-10" : "h-[115px] items-center justify-between"
+  return isOpen.value ? "h-screen items-start p-[46px] bg-[#121212] text-white  transition ease-in-out delay-150  duration-10" : " bg-[#FFFFFF]  text-black h-14 md:h-[115px] items-center justify-between"
 });
 const logoClass = computed(() => {
   return isOpen.value ? "absolute" : ""
+});
+const whiteLogoMobileClass = computed(() => {
+  return isOpen.value ? "md:flex items-center md:items-start" : "md:flex hidden"
 });
 
 

@@ -1,5 +1,5 @@
 <template>
-    <div class=" items-start relative w-full">
+    <div class=" items-start relative w-full h-full">
         <img class="object-fill w-full h-full"   :src="src" alt="Office" />
         <div class="max-w-xl absolute bottom-20 left-14 flex flex-col gap-4 md:gap-8 ">
             <p class="text-base font-normal leading-4  text-white">{{ title }}</p>

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col md:flex-row  p-20">
+    <div class="flex flex-col md:flex-row items-center p-20">
         <div id="question" class="m-8">
             <p class="text-4xl leading-[80px]">
                 QUESTION?
