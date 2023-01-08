@@ -6,6 +6,14 @@ export enum MenuTitles {
     Carrers = "CARRERS",
     contact = "CONTACT"
 }
+export enum FooterTitles {
+    Work = "WORK",
+    Services = "SERVICES",
+    Stories = "STORIES",
+    About = "ABOUT",
+    Carrers = "CARRERS",
+    contact = "CONTACT"
+}
 //to refactor
 export enum MenuTitlesLarge {
     Home = "HOME",

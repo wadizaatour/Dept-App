@@ -3,7 +3,7 @@
    <div class="flex flex-col top-8 gap-10" :class="logoClass">
      <!-- LOGO -->
       <a href="https://dept.com/" class="flex items-center">
-        <img src="../assets/deptLogo.svg" alt="Flowbite Logo" />
+        <img src="../assets/deptLogo.svg" alt="Dept Logo" />
       </a>
       <!-- COUNTRIES -->
       <ul  v-if="isOpen" class="flex flex-col w-40 text-base font-normal leading-4  gap-1 bg-[#121212]">

@@ -1,29 +1,26 @@
 <template>
     
-<footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
-    <div class="sm:flex sm:items-center sm:justify-between">
-        <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-        </a>
+<footer class="p-4 bg-[#121212] shadow md:px-6 md:py-8 dark:bg-gray-900">
+    <div class="sm:flex sm:items-center sm:justify-start gap-28">
+        <Logo/>
         <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+            <li v-for="item in FooterItems"> 
+                <a href="#" class="mr-4 text-[#FFFFFF] text-base hover:underline md:mr-6 ">{{ item }}</a>
             </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
-            </li>
-            <li>
-                <a href="#" class="hover:underline">Contact</a>
-            </li>
+            
         </ul>
     </div>
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 3 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
-    </span>
+     <div class="text-[#FFFFFF] flex flex-row justify-between">
+        <span>Chamber of Commerce: 63464101  VAT: NL 8552.47.502.B01 </span>
+        
+        <span>Terms and conditions</span>
+     </div>
 </footer>
 
 </template>
+<script lang="ts" setup>
+import { FooterTitles } from "../models/menu"
+import Logo from "./Logo.vue"
+const FooterItems = Object.values(FooterTitles)
+</script>
