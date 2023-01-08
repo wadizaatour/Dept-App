@@ -1,13 +1,17 @@
 <template>
     <div class="flex flex-row p-20">
-        <div id="question">
+        <div id="question" class="m-8">
             <p class="text-4xl leading-[80px]">
                 QUESTION?
-                WE ARE HERE
+            </p>
+            <p class="text-4xl leading-[80px]">
+                WE ARE HERE 
+            </p>
+            <p class="text-4xl leading-[80px]">
                 TO HELP!
             </p>
         </div>
-        <Form id="form" class="" @submit="onSubmit">
+        <Form id="form" class="m-8" @submit="onSubmit">
             <div id="contact" class="flex flex-row gap-9">
                 <Input labelTitle="Name" name="name" typeInput="text" :validationRules="validateName"/>
                 <Input labelTitle="Email" name="email" typeInput="email" :validationRules="validateEmail" />
