@@ -1,26 +1,27 @@
 <template>
-    <div class="flex flex-row p-0  max-h-[568px] h-[568px]">
-        <Card v-for=" items in clients" :key="items.id" :title="items.brandName" :description="items.description"
-            :readmore="items.readmore" :src="items.src" />
+    <div v-if="isLoaded" class="flex flex-row p-0 max-h-[568px] h-[568px]">
+        <Card v-for=" items in clients" 
+        :key="items?.id" 
+        :title="items?.brandName"
+        :description="items?.description"
+        :readmore="items?.readmore"
+        :src="items?.src"
+        />
     </div>
 </template>
-
-
 <script lang="ts" setup>
-import { ref, onMounted, computed } from "vue";
+import { computed, defineAsyncComponent  } from "vue";
+import {Client} from "../models/Client";
 import { useClientStore } from "../stores/clients";
-import Card from "./Card.vue";
+const Card = defineAsyncComponent(() =>
+    import("./Card.vue")
+  );
 const store = useClientStore();
-const msg = ref("Welcome to my Vuex Store");
-const getClients = computed(() => {
-    return store.loadClients;
-});
 const clients = computed(() => {
-    return store.clients as any;
+    const clients = [] as Client[] 
+    clients.push(store.clients[1], store.clients[2])
+    return clients  
 });
-onMounted(() => {
-    store.loadClients();
-});
+defineProps<{ isLoaded: boolean }>()
 </script>
 
- 

@@ -1,12 +1,12 @@
 <template>
     <div class="flex flex-row items-start p-0 relative max-h-[568px] h-[568px] ">
-        <!-- <Card 
-         
-        :title="listClients[2].brandName" 
-        :description="listClients[2].description"
-        :readmore="listClients[2].readmore"
-        :src="listClients[2].src"/> -->
-
+        <Card 
+        :key="client?.id" 
+        :title="client?.brandName"
+        :description="client?.description"  
+        :readmore="client?.readmore" 
+        :src="client?.src" 
+        />
         <div class="bg-[#121212] " style="width:100% ; height: inherit;">
             <ul class="px-8 py-24">
                 <li class="text-lg font-normal leading-4 text-white border-b-white border-b "
@@ -35,23 +35,23 @@ import { fetchMessage, fetchClient } from '../services/fetchers';
 import { Element } from '../models/Elements';
 import { Client } from '../models/Client';
 import Card from '../components/Card.vue';
+import { computed } from "vue";
+import { useClientStore } from "../stores/clients";
+
+const store = useClientStore();
+const client = computed(() => {
+    return store.clients[0] as Client;
+});
+
+
 const listItems = ref<Element[]>([]);
-onMounted(() => { getData(),getClients() })
+onMounted(() => { getData() })
 
 async function getData() {
     const res = await fetchMessage()
     listItems.value = res;
 }
-defineProps<{ imgSrc: string }>()
-const listClients = ref<Client[]>([]);
 onMounted(() => { getData() })
-
-async function getClients() {
-    const res = await fetchClient()
-    listClients.value = res;
-    console.log(listClients )
-}
-
 const removeFirstElement = (item: any) => {
     const firstId = 1
     if (item.id === firstId) {

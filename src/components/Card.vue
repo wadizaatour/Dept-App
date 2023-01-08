@@ -13,6 +13,5 @@
 
 </template>
 <script lang="ts" setup>
-defineProps<{ title: string, description: string, readmore: boolean, src: string }>()
-//A selection of projects that pioneer tech and marketing to help brands stay ahead.
+defineProps<{ title?: string, description?: string, readmore?: boolean, src?: string }>()
 </script>

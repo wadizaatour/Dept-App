@@ -15,5 +15,14 @@ export default [
         client: client
       })
     )
+  }),
+  
+  rest.get('/client', (req, res, ctx) => {
+    const clientId = req.url.searchParams.get('id')
+    return res(
+      ctx.json({
+        clientId
+      })
+    )
   })
 ]
