@@ -9,10 +9,9 @@
         </div>
         <div>
             <ul class="grid gap-20 grid-cols-3 grid-rows-4 place-items-center">
-                <li v-for="item, index in clientList">
-                    <!-- <SvgLoader :key="index" :name="item"/> -->
-                    <SvgLoader :key="index"  :name="item.name"/>
-                     
+                <!-- ISSUE WITH IMPORTING DYNAMICALLY SVG -->
+                <li v-for="item in clientList">
+                     <SvgRendered :key="item.name" :name="item.name" />
                 </li>
             </ul>
         </div>
@@ -20,44 +19,44 @@
 </template>
 
 <script setup lang="ts">
-import SvgLoader from "./SvgLoader.vue" 
+import SvgRendered from './SvgRendered.vue'
 
-    const clientList =  [
+const clientList = [
     {
-        name: "google",
+        name: "Google",
     },
     {
-        name: "spotify",
+        name: "Spotify",
     },
     {
-        name: "adyen",
+        name: "Adyen",
     },
     {
-        name: "tesla",
+        name: "Tesla",
     },
     {
-        name: "levis",
+        name: "Levis",
     },
     {
-        name: "patagonia",
+        name: "Patagonia",
     },
     {
-        name: "audi",
+        name: "Audi",
     },
     {
-        name: "asos",
+        name: "Asos",
     },
     {
-        name: "netflix",
+        name: "Netflix",
     },
     {
-        name: "fujitsu",
+        name: "Fujitsu",
     },
     {
-        name: "triumph",
+        name: "Triumph",
     },
     {
-        name: "takeaway",
+        name: "Takeaway",
     },
-    ]
+]
 </script>
