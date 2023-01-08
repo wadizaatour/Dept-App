@@ -18,3 +18,13 @@ export enum MenuTitlesLarge {
     Events = "EVENTS",
     contact = "CONTACT"
 }
+export enum Countries {
+    Land = "Landen",
+    Global = "GLOBAL",
+    Nederland = "NEDERLAND",
+    Ireland = "IRELAND",
+    UnitedKingdom = "UNITED KINGDOM",
+    UnitedStates= "UNITED STATES",
+    Deutshland = "DEUTSHLAND",
+    Schweiz = "SCHWEIZ", 
+}
