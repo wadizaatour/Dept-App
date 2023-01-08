@@ -1,5 +1,5 @@
 <template>
-    <div class="flex  items-start p-0 h-[568px] " :class="cardPosition">
+    <div class="flex items-start p-0 h-auto md:h-[568px] " :class="cardPosition">
         <Card 
         :key="client?.id" 
         :title="client?.brandName"
@@ -45,7 +45,7 @@ const client = computed(() => {
     return store.clients[0] as Client;
 });
 const cardPosition = computed(() => {
-   return props.scaledCardLeft ? "flex-row" : "flex-row-reverse" 
+   return props.scaledCardLeft ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse" 
 });
 
 

@@ -29,12 +29,12 @@ const ClientCard = defineAsyncComponent(() =>
   <ClientCard :is-loaded="isLoaded" :first-card-index="1" :second-card-index="2" />
   <ClientCard :is-loaded="isLoaded" :first-card-index="3" :second-card-index="4" />
   <ClientNote :scaled-card-left="true"  /> 
-  <!-- <ClientCard :is-loaded="isLoaded" :first-card-index="5" :second-card-index="6" /> -->
-  <!-- <ClientNote :scaled-card-left="false" /> -->
-  <!-- <ClientCard :is-loaded="isLoaded" :first-card-index="7" :second-card-index="8" />
+  <ClientCard :is-loaded="isLoaded" :first-card-index="5" :second-card-index="6" />
+  <ClientNote :scaled-card-left="false" />
+  <ClientCard :is-loaded="isLoaded" :first-card-index="7" :second-card-index="8" />
   <ClientCard :is-loaded="isLoaded" :first-card-index="9" :second-card-index="10" />
   <ClientQuote />
-  <ClientCard :is-loaded="isLoaded" :first-card-index="11" :second-card-index="12" /> -->
+  <ClientCard :is-loaded="isLoaded" :first-card-index="11" :second-card-index="12" />
   <ClientList/>
   <Form/>
   <Footer />

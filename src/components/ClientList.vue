@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full p-9 bg-[#121212] min-h-[977px] flex justify-center flex-col">
+    <div class="w-full p-9 bg-[#121212] flex justify-center flex-col">
         <div class="">
             <p class="text-base font-normal leading-4 pt-24 pl-8 text-white">Clients</p>
             <p class="text-4xl font-normal leading-9 p-8 text-white">
