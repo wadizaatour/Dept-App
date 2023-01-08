@@ -16,12 +16,12 @@ import { useClientStore } from "../stores/clients";
 const Card = defineAsyncComponent(() =>
     import("./Card.vue")
   );
+const props = defineProps<{ isLoaded: boolean, firstCardIndex: number, secondCardIndex: number }>()
 const store = useClientStore();
 const clients = computed(() => {
     const clients = [] as Client[] 
-    clients.push(store.clients[1], store.clients[2])
+    clients.push(store.clients[props.firstCardIndex], store.clients[props.secondCardIndex])
     return clients  
 });
-defineProps<{ isLoaded: boolean }>()
 </script>
 

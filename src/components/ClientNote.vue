@@ -1,11 +1,12 @@
 <template>
-    <div class="flex flex-row items-start p-0 relative max-h-[568px] h-[568px] ">
+    <div class="flex  items-start p-0 relative max-h-[568px] h-[568px] " :class="cardPosition">
         <Card 
         :key="client?.id" 
         :title="client?.brandName"
         :description="client?.description"  
         :readmore="client?.readmore" 
         :src="client?.src" 
+        class="max-w-[964px]"
         />
         <div class="bg-[#121212] " style="width:100% ; height: inherit;">
             <ul class="px-8 py-24">
@@ -37,10 +38,14 @@ import { Client } from '../models/Client';
 import Card from '../components/Card.vue';
 import { computed } from "vue";
 import { useClientStore } from "../stores/clients";
+const props = defineProps<{ scaledCardLeft: boolean }>()
 
 const store = useClientStore();
 const client = computed(() => {
     return store.clients[0] as Client;
+});
+const cardPosition = computed(() => {
+   return props.scaledCardLeft ? "flex-row" : "flex-row-reverse" 
 });
 
 

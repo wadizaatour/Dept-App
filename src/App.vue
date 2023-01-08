@@ -3,6 +3,7 @@ import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 import HeroSection from './components/HeroSection.vue'
 import ClientNote from './components/ClientNote.vue'
+import ClientQuote from './components/ClientQuote.vue'
 import { onBeforeMount, defineAsyncComponent } from "vue";
 import { useClientStore } from "./stores/clients";
 import { ref } from "vue";
@@ -22,8 +23,12 @@ const ClientCard = defineAsyncComponent(() =>
 <template>
   <NavBar />
   <HeroSection />
-  <ClientNote />
-  <ClientCard :is-loaded="isLoaded" v-if="isLoaded"/>
+  <ClientNote :scaled-card-left="false"/>
+  <ClientCard :is-loaded="isLoaded" :first-card-index="1" :second-card-index="2" />
+  <ClientCard :is-loaded="isLoaded" :first-card-index="3" :second-card-index="4" />
+  <ClientNote :scaled-card-left="true"  /> 
+  <!-- we need a props for client note to get image by id and content dynamically -->
+  <ClientQuote />
   <Footer />
 </template>
  
