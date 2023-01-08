@@ -12,6 +12,7 @@
     "axios": "^1.2.2",
     "msw": "^0.49.2",
     "pinia": "^2.0.28",
+    "vite-svg-loader": "^4.0.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
