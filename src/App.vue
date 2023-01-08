@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import NavBar from './components/NavBar.vue'
+import Form from './components/Form.vue'
 import Footer from './components/Footer.vue'
 import HeroSection from './components/HeroSection.vue'
 import ClientNote from './components/ClientNote.vue'
@@ -32,6 +33,7 @@ const ClientCard = defineAsyncComponent(() =>
   <ClientQuote />
   <ClientCard :is-loaded="isLoaded" :first-card-index="3" :second-card-index="4" />
   <ClientList/>
+  <Form/>
   <Footer />
 </template>
  
