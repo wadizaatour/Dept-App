@@ -1,5 +1,8 @@
 <template>
-      <a href="https://dept.com/" class="flex items-center">
-        <img src="../assets/deptLogo.svg" alt="Dept Logo" />
+      <a href="https://dept.com/" class="flex" :class="className">
+        <img :src="logoName" alt="Dept Logo" />
       </a>
 </template>
+<script lang="ts" setup>
+defineProps<{ className: string, logoName: string }>()
+</script>

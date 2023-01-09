@@ -2,12 +2,11 @@
   <nav class="flex  md:text-white md:bg-[#121212] px-14 w-full " :class="navClasses">
    <div class="flex md:flex-col gap-10" :class="logoClass">
      <!-- LOGO -->
-      <a  href="https://dept.com/" class="" :class="whiteLogoMobileClass">
-        <img  src="../assets/deptLogo.svg" alt="Dept Logo" />
-      </a>
-      <a v-if="!isOpen" href="https://dept.com/" class="items-start flex md:hidden">
+      <Logo :className="whiteLogoMobileClass" logoName="../src/assets/deptLogo.svg"/>
+      <Logo v-if="!isOpen" :className="blackLogoMobileClass" logoName="../src/assets/logoBlack.svg"/>
+      <!-- <a v-if="!isOpen" href="https://dept.com/" class="items-start flex md:hidden">
         <img  src="../assets/logoBlack.svg" alt="Dept Logo" />
-      </a>
+      </a> -->
       <!-- COUNTRIES -->
       <ul  v-if="isOpen" class="md:flex flex-col w-40 text-base font-normal leading-4 hidden gap-1 bg-[#121212]">
         <li v-for="item in CountriesItem " class=" font-normal text-white text-1xl w-full">
@@ -42,6 +41,7 @@
 
 import { computed, ref, defineAsyncComponent } from "vue"
 import { MenuTitles, MenuTitlesLarge, Countries } from "../models/menu"
+import  Logo from "./Logo.vue"
 let isOpen = ref(false)
 
 const Menu = Object.values(MenuTitles)
@@ -68,6 +68,9 @@ const logoClass = computed(() => {
 });
 const whiteLogoMobileClass = computed(() => {
   return isOpen.value ? "md:flex items-center md:items-start" : "md:flex hidden"
+});
+const blackLogoMobileClass = computed(() => {
+  return  "items-start flex md:hidden"
 });
 
 

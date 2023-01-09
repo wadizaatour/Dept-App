@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col md:flex-row items-center p-20">
+    <div class="flex flex-col md:flex-row p-9 md:items-center md:p-20">
         <div id="question" class="m-8">
             <p class="text-4xl leading-[80px]">
                 QUESTION?
@@ -28,13 +28,7 @@
  
 <script lang="ts" setup>
 import Input from "./BaseInput.vue"
-import { Form, RuleExpression } from 'vee-validate';
-
-const isRequired = (value:string): string |undefined => {
-    if (!value) {
-        return 'This field is required';
-    }
-}
+import { Form } from 'vee-validate';
 
 const onSubmit = (values: any) => {
     console.log(values)
