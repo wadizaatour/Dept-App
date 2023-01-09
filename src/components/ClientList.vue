@@ -8,7 +8,7 @@
                 them to reach for the stars</p>
         </div>
         <div id="listLogo">
-            <ul class="grid gap-20 grid-cols-3 grid-rows-4 place-items-center">
+            <ul class="grid gap-20 grid-cols-2 md:grid-cols-3 grid-rows-4 place-items-center">
                 <li v-for="item in clientList">
                     <SvgRendered :key="item.clientId" :name="item.clientName" />
                 </li>

@@ -27,7 +27,7 @@
 </template>
  
 <script lang="ts" setup>
-import Input from "./Input.vue"
+import Input from "./BaseInput.vue"
 import { Form, RuleExpression } from 'vee-validate';
 
 const isRequired = (value:string): string |undefined => {

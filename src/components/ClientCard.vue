@@ -14,7 +14,7 @@ import { computed, defineAsyncComponent  } from "vue";
 import {Client} from "../models/Client";
 import { useClientStore } from "../stores/clients";
 const Card = defineAsyncComponent(() =>
-    import("./Card.vue")
+    import("./BaseCard.vue")
   );
 const props = defineProps<{ isLoaded: boolean, firstCardIndex: number, secondCardIndex: number }>()
 const store = useClientStore();
