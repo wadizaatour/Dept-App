@@ -1,9 +1,9 @@
 <template>
     <svg width="172" height="90" viewBox="0 0 172 90" fill="none" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
-    <rect width="172" height="90" fill="url(#pattern0)" />
+    <rect width="172" height="90" fill="url(#pattern7)" />
     <defs>
-        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <pattern id="pattern7" patternContentUnits="objectBoundingBox" width="1" height="1">
             <use xlink:href="#image0_109_1037" transform="scale(0.0025 0.0047619)" />
         </pattern>
         <image id="image0_109_1037"
