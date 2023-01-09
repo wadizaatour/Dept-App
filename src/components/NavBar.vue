@@ -4,9 +4,6 @@
      <!-- LOGO -->
       <Logo :className="whiteLogoMobileClass" logoName="../src/assets/deptLogo.svg"/>
       <Logo v-if="!isOpen" :className="blackLogoMobileClass" logoName="../src/assets/logoBlack.svg"/>
-      <!-- <a v-if="!isOpen" href="https://dept.com/" class="items-start flex md:hidden">
-        <img  src="../assets/logoBlack.svg" alt="Dept Logo" />
-      </a> -->
       <!-- COUNTRIES -->
       <ul  v-if="isOpen" class="md:flex flex-col w-40 text-base font-normal leading-4 hidden gap-1 bg-[#121212]">
         <li v-for="item in CountriesItem " class=" font-normal text-white text-1xl w-full">
