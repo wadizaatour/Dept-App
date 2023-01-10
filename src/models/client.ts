@@ -6,6 +6,12 @@ export type Client = {
     readmore: boolean,
     industry: string
 }
+export enum Industry {
+    Technology = "technology",
+    Commerce = "Commerce",
+    Food = "Food",
+    Travel = "Food",
+}
 const client: Client[] = [
     {
         id: 0,

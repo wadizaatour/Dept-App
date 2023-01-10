@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection.vue'
 import ClientNote from './components/ClientNote.vue'
 import ClientQuote from './components/ClientQuote.vue'
 import ClientList from './components/ClientList.vue'
+import FilterList from './components/FilterList.vue'
 import { onBeforeMount, defineAsyncComponent } from "vue";
 import { useClientStore } from "./stores/clients";
 import { ref } from "vue";
@@ -25,8 +26,9 @@ const ClientCard = defineAsyncComponent(() =>
 <template>
   <NavBar />
   <HeroSection />
+  <FilterList/>
   <!-- <ClientNote :scaled-card-left="false"/> -->
-  <ClientCard :is-loaded="isLoaded" :first-card-index="1" :second-card-index="2" />
+  <!-- <ClientCard :is-loaded="isLoaded" :first-card-index="1" :second-card-index="2" />
   <ClientCard :is-loaded="isLoaded" :first-card-index="3" :second-card-index="4" />
   <ClientNote :scaled-card-left="true"  /> 
   <ClientCard :is-loaded="isLoaded" :first-card-index="5" :second-card-index="6" />
@@ -36,7 +38,8 @@ const ClientCard = defineAsyncComponent(() =>
   <ClientQuote />
   <ClientCard :is-loaded="isLoaded" :first-card-index="11" :second-card-index="12" />
   <ClientList/>
-  <Form/>
-  <Footer />
+  <Form/> -->
+  <router-view />
+  <Footer></Footer>
 </template>
  

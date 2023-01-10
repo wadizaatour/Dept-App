@@ -12,13 +12,13 @@
       </ul>
    </div>
     <!-- MENU + BUTTON #openNav -->
-    <div v-if="isOpen" class="flex flex-col items-end gap-10 w-full">
+    <div v-if="isOpen" class="flex  flex-col items-end gap-10 w-full">
       <button @click="toggleMenu">
         <component :is="exitMenu" class="fill-current transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 duration-300" />
       </button>
       <ul class="flex flex-col  gap-2 w-full">
-        <li v-for="item in MenuToggled " class="  font-normal  text-white text-4xl border-b-white border-b w-full">
-          <a class="flex justify-end" href="#" aria-current="page" :key="item">{{ item }}</a>
+        <li v-for="item in MenuToggled " class="  font-normal bounce-short duration-75 text-white text-4xl border-b-white border-b w-full">
+          <a class="flex justify-end  animate-fade-in-down" href="#" aria-current="page" :key="item">{{ item }}</a>
         </li>
       </ul>
     </div>

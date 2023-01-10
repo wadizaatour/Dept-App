@@ -1,9 +1,9 @@
 <template>
     
-<footer class=" first-line: bg-[#121212] shadow p-12 dark:bg-gray-900 md:h-[310px]">
+<footer class=" first-line: bg-[#121212] shadow p-12 dark:bg-gray-900 ">
     <div class="sm:flex sm:items-center sm:justify-start gap-28">
         <Logo className="items-start hidden md:flex" logoName="../src/assets/deptLogo.svg"/>
-        <ul class="flex flex-col md:flex-wrap gap-8 md:items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+        <ul class="flex flex-col md:flex-row gap-8 md:items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
             <li v-for="item in FooterItems"> 
                 <a href="#" class="mr-4 text-[#FFFFFF] text-base hover:underline md:mr-6 ">{{ item }}</a>
             </li>

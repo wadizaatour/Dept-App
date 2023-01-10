@@ -10,7 +10,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { computed, defineAsyncComponent  } from "vue";
+import { computed, defineAsyncComponent, ref  } from "vue";
 import {Client} from "../models/Client";
 import { useClientStore } from "../stores/clients";
 const Card = defineAsyncComponent(() =>
@@ -23,5 +23,17 @@ const clients = computed(() => {
     clients.push(store.clients[props.firstCardIndex], store.clients[props.secondCardIndex])
     return clients  
 });
+const selectedIndustry =  ref('')
+//add select box component for industry filter and add enum for industry
+// const filtredClients = computed(() => {
+//     const clients = [] as Client[] 
+//      store.clients.filter(e => {
+//         if(e.industry === selectedIndustry) {
+//             return e
+
+//         }
+//     })
+//     return clients  
+// });
 </script>
 
