@@ -1,5 +1,5 @@
 <template>
-    <ClientCard :is-loaded="isLoaded" :first-card-index="1" :second-card-index="2" />
+  <ClientCard :is-loaded="isLoaded" :first-card-index="1" :second-card-index="2" />
   <ClientCard :is-loaded="isLoaded" :first-card-index="3" :second-card-index="4" />
   <ClientNote :scaled-card-left="true"  /> 
   <ClientCard :is-loaded="isLoaded" :first-card-index="5" :second-card-index="6" />
@@ -13,14 +13,10 @@
 </template>
 
 <script lang="ts" setup>
-import NavBar from '../components/NavBar.vue'
 import Form from '../components/Form.vue'
-import Footer from '../components/Footer.vue'
-import HeroSection from '../components/HeroSection.vue'
 import ClientNote from '../components/ClientNote.vue'
 import ClientQuote from '../components/ClientQuote.vue'
 import ClientList from '../components/ClientList.vue'
-import FilterList from '../components/FilterList.vue'
 import { onBeforeMount, defineAsyncComponent } from "vue";
 import { useClientStore } from "../stores/clients";
 import { ref } from "vue";
