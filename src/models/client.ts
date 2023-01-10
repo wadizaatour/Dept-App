@@ -4,6 +4,7 @@ export type Client = {
     src: string,
     description: string, 
     readmore: boolean,
+    industry: string
 }
 const client: Client[] = [
     {
@@ -12,7 +13,7 @@ const client: Client[] = [
         src: "../src/assets/clientNote.png",
         description: "Rethinking the entire online ecosystem", 
         readmore: true,
-        
+        industry: "technology"
     },
     {
         id: 1,
@@ -20,6 +21,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard1.png",
         description: "A Summer island in the Netherlands", 
         readmore: true,
+        industry: "technology"
         
     },
     {
@@ -28,6 +30,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard2.png",
         description: "Not some average banking website", 
         readmore: true,
+        industry: "banking"
         
     },
     {
@@ -36,6 +39,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard3.png",
         description: "Beautiful design meets innovative technology", 
         readmore: true,
+        industry: "technology"
         
     },
     {
@@ -44,6 +48,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard4.png",
         description: "A 100 years of Mondriaan & De Stijl", 
         readmore: true,
+        industry: "goverment"
         
     },
     {
@@ -52,6 +57,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard5.png",
         description: "Delivering clarity on a global scale", 
         readmore: true,
+        industry: "technology"
         
     },
     {
@@ -60,7 +66,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard6.png",
         description: "Swipe to find your next holiday destination", 
         readmore: true,
-        
+        industry: "travel"
     },
     {
         id: 7,
@@ -68,6 +74,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard7.png",
         description: "A campaign for the limited edition letter packs", 
         readmore: true,
+        industry: "food"
         
     },
     {
@@ -76,6 +83,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard8.png",
         description: "Live like a champion with Jerome Boateng", 
         readmore: true,
+        industry: "technology"
         
     },
     {
@@ -84,6 +92,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard9.png",
         description: "Innovative SEO and content strategy for Zalando", 
         readmore: true,
+        industry: "technology"
         
     },
     {
@@ -92,7 +101,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard10.png",
         description: "The search of the most influential book ever", 
         readmore: true,
-        
+        industry: "bibliothec"
     },
     {
         id: 11,
@@ -100,6 +109,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard11.png",
         description: "Delivering complex commerce solutions", 
         readmore: true,
+        industry: "technology"
         
     },
     {
@@ -108,6 +118,7 @@ const client: Client[] = [
         src: "../src/assets/images/clientCard12.png",
         description: "Swipe to find your next holiday destination", 
         readmore: true,
+        industry: "food"
         
     },
       
