@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoaded" class="flex flex-col md:flex-row p-0 md:h-[568px]">
+    <div v-if="isLoaded" class="flex flex-col md:flex-row p-0 md:h-[568px]" :class="showList">
         <Card v-for=" items in clients" 
         :key="items?.id" 
         :title="items?.brandName"
@@ -16,7 +16,7 @@ import { useClientStore } from "../stores/clients";
 const Card = defineAsyncComponent(() =>
     import("./BaseCard.vue")
   );
-const props = defineProps<{ isLoaded: boolean, firstCardIndex: number, secondCardIndex: number }>()
+const props = defineProps<{ isLoaded: boolean, firstCardIndex: number, secondCardIndex: number, showList: string }>()
 const store = useClientStore();
 const clients = computed(() => {
     const clients = [] as Client[] 
