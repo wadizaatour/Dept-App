@@ -1,55 +1,55 @@
 <template>
-  <FilterList @toggeled="showListView"/>
-  <ClientCard :is-loaded="isLoaded" :first-card-index="1" :second-card-index="2"  :show-list="showListViewClass"/>
-  <!-- <ClientCard :is-loaded="isLoaded" :first-card-index="3" :second-card-index="4" />
-  <ClientNote :scaled-card-left="true"  /> 
-  <ClientCard :is-loaded="isLoaded" :first-card-index="5" :second-card-index="6" />
-  <ClientNote :scaled-card-left="false" />
-  <ClientCard :is-loaded="isLoaded" :first-card-index="7" :second-card-index="8" />
-  <ClientCard :is-loaded="isLoaded" :first-card-index="9" :second-card-index="10" />
-  <ClientQuote />
-  <ClientCard :is-loaded="isLoaded" :first-card-index="11" :second-card-index="12" /> -->
-  <ClientList/>
-  <Form/>
+  <FilterList @toggeled="showListView" @press="filterIsDisabled" @filter="filterListView" />
+  <ClientCard v-if="filterIsActive" :is-loaded="isLoaded" :first-card-index="clientsId[0] ? clientsId[0] : 0"
+    :second-card-index="clientsId[1] ? clientsId[1] : 1" :show-list="showListViewClass" />
+  <StaticPage v-if="!filterIsActive" :showListViewClass="showListViewClass" />
+  <Form />
 </template>
 
 <script lang="ts" setup>
 import Form from '../components/Form.vue'
-import ClientNote from '../components/ClientNote.vue'
-import ClientQuote from '../components/ClientQuote.vue'
-import ClientList from '../components/ClientList.vue'
+import StaticPage from '../views/StaticPage.vue'
 import FilterList from '../components/FilterList.vue'
 import { onBeforeMount, defineAsyncComponent } from "vue";
 import { useClientStore } from "../stores/clients";
-import { ref , computed, reactive } from "vue";
-
-const isLoaded = ref(false); 
-let showListViewClass = ref("")
-onBeforeMount(() => {
-  const store = useClientStore()
-  store.loadClients(); 
-     isLoaded.value = true 
-});
-let showList = reactive({
-    emittedValues: 'toggeled'
-  })
-  const showListView = (emittedValues: any) => {
-
-    showList.emittedValues = emittedValues ?? 'toggeled'
-    showListViewClass.value = showList.emittedValues  ? "md:flex-col" : "md:flex-row";
-  }
-  // const showListViewClass = () => {
-  //   console.log(showList )
-  //  return showList.emittedValues   ? "md:flex-col" : "md:flex-row";
-  // }
-// const showList: any = computed((toggeled) => {
-//   console.log(toggeled, 'toggled value')
-//     return toggeled ?  : "md:flex-row";
-// });
-
-
+import { ref, reactive } from "vue";
 const ClientCard = defineAsyncComponent(() =>
-    import("../components/ClientCard.vue")
+  import("../components/ClientCard.vue")
 );
+const isLoaded = ref(false);
+const filterIsActive = ref(false);
+let showListViewClass = ref("")
+let clientsId = ref<number[]>([])
+const store = useClientStore()
+onBeforeMount(() => {
 
+  store.loadClients();
+  isLoaded.value = true
+});
+
+let showList = reactive({
+  emittedValues: 'toggeled'
+})
+let filterList = reactive({
+  emittedValues: 'filter'
+})
+const filterIsDisabled = () => {
+  filterIsActive.value = false
+}
+const showListView = (emittedValues: any) => {
+
+  showList.emittedValues = emittedValues ?? 'toggeled'
+  showListViewClass.value = showList.emittedValues ? "md:flex-col md:h-full" : "md:flex-row";
+}
+const filterListView = (emittedValues: any) => {
+  filterIsActive.value = true
+  clientsId.value = []
+  filterList.emittedValues = emittedValues ?? 'filter'
+  store.clients.filter(e => {
+    if (e.industry === filterList.emittedValues) {
+      clientsId.value.push(e.id)
+    }
+  })
+
+}
 </script>

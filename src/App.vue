@@ -26,7 +26,6 @@ const ClientCard = defineAsyncComponent(() =>
 <template>
   <NavBar />
   <HeroSection />
-  
   <router-view />
   <Footer></Footer>
 </template>
