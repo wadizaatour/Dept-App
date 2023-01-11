@@ -5,10 +5,10 @@
         <span v-else>New content available, click on reload button to update.</span>
       </div>
       <div class="buttons flex align-middle mt-2 md:mt-0">
-        <button v-if="needRefresh" @click="updateServiceWorker()" class="button">
+        <button v-if="needRefresh" @click="updateServiceWorker()" name="reload" class="button">
           Reload
         </button>
-        <button @click="close" class="button">
+        <button @click="close" name="close">
           Close
         </button>
       </div>

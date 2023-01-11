@@ -4,9 +4,24 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts}'],
   theme: {
+    aspectRatio: {
+      auto: 'auto',
+      square: '1 / 1',
+      video: '16 / 9',
+    },
+    plugins: [
+      require('@tailwindcss/aspect-ratio'),
+    ],
+    corePlugins: {
+      aspectRatio: false,
+    },
     extend: {
       fontFamily: {
-        maison:['Maison Neue',...defaultTheme.fontFamily.sans]
+        maison:['Maison Neue',...defaultTheme.fontFamily.sans],
+        display: ['Maison Neue',...defaultTheme.fontFamily.sans]
+      },
+      fontDisplay:{
+        swap: 'swap'
       },
       keyframes: {
         'fade-in-down': {

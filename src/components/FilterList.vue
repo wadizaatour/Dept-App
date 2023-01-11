@@ -1,7 +1,7 @@
 <template>
     <div class=" flex justify-between items-center h-24 bg-white">
         <span class="p-8 text-[#A3A3A3]">Show me
-            <button @click="goHome" class="text-black">All work</button>
+            <button @click="goHome" name="allwork" class="text-black">All work</button>
         </span>
         <span class="p-8 text-[#A3A3A3] max-w-xs flex flex-row items-center">In
             <label for="Industry" class="text-black">All Industry</label>
@@ -9,7 +9,7 @@
                 {{ IndustryValue }}
                 <option v-for="name in IndustryName" :value="name">{{ name }}</option>
             </select>
-            <button class="hidden md:flex" @click="handleChange">
+            <button class="hidden md:flex" @click="handleChange" name="toggleview">
                 <ToggleView />
             </button>
         </span>

@@ -13,7 +13,7 @@
    </div>
     <!-- MENU + BUTTON #openNav -->
     <div v-if="isOpen" class="flex  flex-col items-end gap-10 w-full">
-      <button @click="toggleMenu">
+      <button @click="toggleMenu" name="exitmenu">
         <component :is="exitMenu" class="fill-current transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 duration-300" />
       </button>
       <ul class="flex flex-col  gap-2 w-full">
@@ -28,7 +28,7 @@
         <a href="#" aria-current="page" :key="item">{{ item }}</a>
       </li>
     </ul>
-    <button v-if="!isOpen" @click="toggleMenu" >
+    <button v-if="!isOpen" @click="toggleMenu" name="menu">
       <p class="block md:hidden">Menu</p>
       <component :is="dots" class="fill-current transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hidden md:block" />
     </button>

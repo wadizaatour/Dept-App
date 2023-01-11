@@ -6,7 +6,7 @@
                 <div id="textContent" class="max-w-xl  flex flex-col gap-3">
                     <p class="text-base font-normal leading-4  text-white">{{ item.title }}</p>
                     <p class="text-base font-normal leading-4  text-white">{{ item.desription }}</p>
-                    <button v-if="item.readmore" class="flex items-center gap-3 hover:underline">
+                    <button v-if="item.readmore" name="readmore" class="flex items-center gap-3 hover:underline">
                         <img class="h-3 w-3" src="../assets/dot.svg" alt="dot" />
                         <p>Read more</p>
                     </button>

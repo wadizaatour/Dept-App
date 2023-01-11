@@ -1,7 +1,8 @@
 <template>
     <div class="flex flex-col ">
-        <label class="text-base">{{ labelTitle }}</label>
+        <label class="text-base" :for="labelTitle">{{ labelTitle }}</label>
         <Field 
+            :id="labelTitle"
             :type="typeInput" 
             :name="name"
             :rules="(validationRules as any)"
@@ -12,7 +13,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { ErrorMessage, Field, GenericValidateFunction, RuleExpression } from 'vee-validate';
+import { ErrorMessage, Field } from 'vee-validate';
 
 defineProps<{ 
     labelTitle: string,
