@@ -5,7 +5,7 @@
                 QUESTION?
             </p>
             <p class="text-4xl leading-[80px]">
-                WE ARE HERE 
+                WE ARE HERE
             </p>
             <p class="text-4xl leading-[80px]">
                 TO HELP!
@@ -13,7 +13,7 @@
         </div>
         <Form id="form" class="m-8" @submit="onSubmit">
             <div id="contact" class="flex flex-col md:flex-row gap-9">
-                <Input labelTitle="Name" name="name" typeInput="text" :validationRules="validateName"/>
+                <Input labelTitle="Name" name="name" typeInput="text" :validationRules="validateName" />
                 <Input labelTitle="Email" name="email" typeInput="email" :validationRules="validateEmail" />
             </div>
             <div id="message" class="flex1 md:flex pt-10">
@@ -34,7 +34,7 @@ const onSubmit = (values: any) => {
     console.log(values)
 }
 
-const validateEmail = (value:string) => {
+const validateEmail = (value: string) => {
     if (!value) {
         return 'This field is required';
     }
@@ -48,7 +48,7 @@ const validateEmail = (value:string) => {
     return true;
 };
 
-const validateName = (value:string) =>{
+const validateName = (value: string) => {
     if (!value) {
         return 'This field is required';
     }
@@ -60,7 +60,7 @@ const validateName = (value:string) =>{
     return true;
 }
 
-const validateMessage = (value:string) =>{
+const validateMessage = (value: string) => {
     if (!value) {
         return 'This field is required';
     }

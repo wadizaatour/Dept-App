@@ -1,28 +1,30 @@
 <template>
   <nav class="flex  md:text-white md:bg-[#121212] px-14 w-full " :class="navClasses">
-   <div class="flex md:flex-col gap-10" :class="logoClass">
-     <!-- LOGO -->
-      <Logo :className="whiteLogoMobileClass" logoName="../src/assets/deptLogo.svg"/>
-      <Logo v-if="!isOpen" :className="blackLogoMobileClass" logoName="../src/assets/logoBlack.svg"/>
+    <div class="flex md:flex-col gap-10" :class="logoClass">
+      <!-- LOGO -->
+      <Logo :className="whiteLogoMobileClass" logoName="../src/assets/deptLogo.svg" />
+      <Logo v-if="!isOpen" :className="blackLogoMobileClass" logoName="../src/assets/logoBlack.svg" />
       <!-- COUNTRIES -->
-      <ul  v-if="isOpen" class="md:flex flex-col w-40 text-base font-normal leading-4 hidden gap-1 bg-[#121212]">
+      <ul v-if="isOpen" class="md:flex flex-col w-40 text-base font-normal leading-4 hidden gap-1 bg-[#121212]">
         <li v-for="item in CountriesItem " class=" font-normal text-white text-1xl w-full">
-          <a  href="#" aria-current="page" :key="item">{{ item }}</a>
+          <a href="#" aria-current="page" :key="item">{{ item }}</a>
         </li>
       </ul>
-   </div>
+    </div>
     <!-- MENU + BUTTON #openNav -->
     <div v-if="isOpen" class="flex  flex-col items-end gap-10 w-full">
       <button @click="toggleMenu" name="exitmenu">
-        <component :is="exitMenu" class="fill-current transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 duration-300" />
+        <component :is="exitMenu"
+          class="fill-current transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 duration-300" />
       </button>
       <ul class="flex flex-col  gap-2 w-full">
-        <li v-for="item in MenuToggled " class="  font-normal bounce-short duration-75 text-white text-4xl border-b-white border-b w-full">
+        <li v-for="item in MenuToggled "
+          class="  font-normal bounce-short duration-75 text-white text-4xl border-b-white border-b w-full">
           <a class="flex justify-end  animate-fade-in-down" href="#" aria-current="page" :key="item">{{ item }}</a>
         </li>
       </ul>
     </div>
-  <!-- MENU + BUTTON #closedNav -->
+    <!-- MENU + BUTTON #closedNav -->
     <ul v-if="!isOpen" class="md:flex flex-row justify-center items-center gap-12 hidden ">
       <li v-for="item in Menu " class="text-lg font-normal leading-4 hover:underline text-white">
         <a href="#" aria-current="page" :key="item">{{ item }}</a>
@@ -30,7 +32,8 @@
     </ul>
     <button v-if="!isOpen" @click="toggleMenu" name="menu">
       <p class="block md:hidden">Menu</p>
-      <component :is="dots" class="fill-current transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hidden md:block" />
+      <component :is="dots"
+        class="fill-current transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hidden md:block" />
     </button>
   </nav>
 </template>
@@ -38,7 +41,7 @@
 
 import { computed, ref, defineAsyncComponent } from "vue"
 import { MenuTitles, MenuTitlesLarge, Countries } from "../models/menu"
-import  Logo from "./Logo.vue"
+import Logo from "./Logo.vue"
 let isOpen = ref(false)
 
 const Menu = Object.values(MenuTitles)
@@ -67,7 +70,7 @@ const whiteLogoMobileClass = computed(() => {
   return isOpen.value ? "md:flex items-center md:items-start" : "md:flex hidden"
 });
 const blackLogoMobileClass = computed(() => {
-  return  "items-start flex md:hidden"
+  return "items-start flex md:hidden"
 });
 
 
