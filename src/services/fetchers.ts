@@ -6,7 +6,7 @@ export const fetchMessage = async function () {
 }
 export const fetchClient = async function () {
   const response = await axios.get('/client')
-  return response.data.client
+  return response?.data?.client
 }
 export const fetchClientById = async function (id: number) {
   const response = await axios.get( `${baseUrl}/${id}`)
