@@ -1,6 +1,6 @@
 <template>
   <nav class="flex  md:text-white md:bg-[#121212] px-14 w-full " :class="navClasses">
-    <div class="flex md:flex-col gap-10" :class="logoClass">
+    <div id="logoSection" class="flex md:flex-col gap-10" :class="logoClass">
       <!-- LOGO -->
       <Logo :className="whiteLogoMobileClass" logoName="../src/assets/deptLogo.svg" />
       <Logo v-if="!isOpen" :className="blackLogoMobileClass" logoName="../src/assets/logoBlack.svg" />
@@ -12,7 +12,7 @@
       </ul>
     </div>
     <!-- MENU + BUTTON #openNav -->
-    <div v-if="isOpen" class="flex  flex-col items-end gap-10 w-full">
+    <div id="menuIsOpen" v-if="isOpen" class="flex  flex-col items-end gap-10 w-full">
       <button @click="toggleMenu" name="exitmenu">
         <component :is="exitMenu"
           class="fill-current transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 duration-300" />
@@ -25,16 +25,18 @@
       </ul>
     </div>
     <!-- MENU + BUTTON #closedNav -->
-    <ul v-if="!isOpen" class="md:flex flex-row justify-center items-center gap-12 hidden ">
-      <li v-for="item in Menu " class="text-lg font-normal leading-4 hover:underline text-white">
-        <a href="#" aria-current="page" :key="item">{{ item }}</a>
-      </li>
-    </ul>
-    <button v-if="!isOpen" @click="toggleMenu" name="menu">
-      <p class="block md:hidden">Menu</p>
-      <component :is="dots"
-        class="fill-current transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hidden md:block" />
-    </button>
+    <div id="menuIsClose" class="flex flex-row gap-10">
+      <ul v-if="!isOpen" class="md:flex flex-row justify-center items-center gap-12 hidden">
+        <li v-for="item in Menu " class="text-lg font-normal leading-4 hover:underline text-white">
+          <a href="#" aria-current="page" :key="item">{{ item }}</a>
+        </li>
+      </ul>
+      <button v-if="!isOpen" @click="toggleMenu" class="px-4" name="menu">
+        <p class="block md:hidden">Menu</p>
+        <component :is="dots"
+          class="fill-current transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hidden md:block" />
+      </button>
+    </div>
   </nav>
 </template>
 <script setup lang="ts">

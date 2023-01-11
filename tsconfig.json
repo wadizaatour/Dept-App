@@ -13,8 +13,7 @@
     "skipLibCheck": true,
     "noEmit": true,
     "types": ["vite/client", "@types/jest"],
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
-    "paths": { "@/*": ["src/*"] }
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "tests/**/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
