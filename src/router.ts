@@ -7,6 +7,11 @@ const routes = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/:industry",
+    name: "Industry",
+    component: Home,
+  },
  
 ];
 
