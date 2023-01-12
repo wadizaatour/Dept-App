@@ -70,6 +70,7 @@ npm run build
  npm run test
 
 **ps**
+
  The application was tested mostly on google Chrome.
  I did my best to get one example for each item mentioned in the requirements to keep things simple.
  I have followed the approach make it work make it pretty.
