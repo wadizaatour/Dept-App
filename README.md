@@ -79,7 +79,7 @@ npm run build
  For the performance! lighthouse report gives a lower score since the text is not compressed through a server. This can only be improved by hosting the application.
  
  **this is amount of days took me to achieve this results: (45 commits)**
- 
+ Around 32h inculding research and some technology testing.
  ![dept overview](https://user-images.githubusercontent.com/25867217/212013606-16bd384f-85bc-4695-a4c9-9dee75aa8583.png)
 
 
