@@ -76,6 +76,11 @@ npm run build
  I have followed the approach make it work make it pretty.
  I was able to add the PWA to the application! however the service worker used by MSW cannot handle requests while you have a the worker running for the PWA.
  There is no workarround since I am mocking the data. In real buisness case it can be easily integrate it.
- For the performance! lighthouse report gives a lower score since the text is not compressed through a server. This can only be improved by hosting the application 
+ For the performance! lighthouse report gives a lower score since the text is not compressed through a server. This can only be improved by hosting the application.
+ 
+ **this is amount of days took me to achieve this results: (45 commits)**
+ 
+ ![dept overview](https://user-images.githubusercontent.com/25867217/212013606-16bd384f-85bc-4695-a4c9-9dee75aa8583.png)
+
 
 
