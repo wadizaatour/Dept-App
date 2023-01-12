@@ -67,7 +67,6 @@ you can check that the files are using gzip while they are being built with vite
 npm run build
 ### :four: run unit test
 
-**NPM**
  npm run test
 
 **ps**
