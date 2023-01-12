@@ -1,5 +1,4 @@
 <template>
-
     <footer class=" first-line: bg-[#121212] shadow p-12 dark:bg-gray-900 ">
         <div class="sm:flex sm:items-center sm:justify-start gap-28">
             <Logo className="items-start hidden md:flex" logoName="../src/assets/deptLogo.svg" />
@@ -8,7 +7,6 @@
                 <li v-for="item in FooterItems">
                     <a href="#" class="mr-4 text-[#FFFFFF] text-base hover:underline md:mr-6 ">{{ item }}</a>
                 </li>
-
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
@@ -19,7 +17,6 @@
             <span class="text-[#808080]">© 2022 Dept Agency</span>
         </div>
     </footer>
-
 </template>
 <script lang="ts" setup>
 import { FooterTitles } from "../models/menu"
