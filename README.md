@@ -1,6 +1,8 @@
 # Dept app
 
 This is the best effort made by wadi zaatour for dept frontend challenge. I have learned a lot during working on solving it and looking forward to discuss further regarding the decisions that I have made.
+![dept app 1](https://user-images.githubusercontent.com/25867217/212007095-ffec24c8-2e7d-4f8a-a282-21bae1d87136.png)
+![dpet app 2](https://user-images.githubusercontent.com/25867217/212007109-4752aa04-7a59-418c-a490-5e8e8cd02cdf.png)
 
 ## :hammer: Configured development tools:
 
@@ -65,10 +67,10 @@ you can check that the files are using gzip while they are being built with vite
 npm run build
 ### :four: run unit test
 
-**NPM**
  npm run test
 
 **ps**
+
  The application was tested mostly on google Chrome.
  I did my best to get one example for each item mentioned in the requirements to keep things simple.
  I have followed the approach make it work make it pretty.
